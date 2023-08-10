@@ -41,6 +41,8 @@
 		D726DC762A857CC700CADA5B /* ContentUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC752A857CC700CADA5B /* ContentUrlModel.swift */; };
 		D726DC782A857D0900CADA5B /* UrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC772A857D0900CADA5B /* UrlModel.swift */; };
 		D726DC7A2A857DF400CADA5B /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC792A857DF400CADA5B /* ProductDetailModel.swift */; };
+		D726DC7F2A85879000CADA5B /* ProductPromotionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC7E2A85879000CADA5B /* ProductPromotionsModel.swift */; };
+		D726DC812A8589E700CADA5B /* CustomFiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC802A8589E700CADA5B /* CustomFiltersModel.swift */; };
 		EDE22D2ADA9203AFE5F5A158 /* Pods_ProductList_ProductListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 		D726DC752A857CC700CADA5B /* ContentUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUrlModel.swift; sourceTree = "<group>"; };
 		D726DC772A857D0900CADA5B /* UrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlModel.swift; sourceTree = "<group>"; };
 		D726DC792A857DF400CADA5B /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
+		D726DC7E2A85879000CADA5B /* ProductPromotionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPromotionsModel.swift; sourceTree = "<group>"; };
+		D726DC802A8589E700CADA5B /* CustomFiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFiltersModel.swift; sourceTree = "<group>"; };
 		D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList_ProductListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBCDD3A4608B2760DE6CCDD /* Pods_ProductList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E616FB7C5EE2D8405A3C6F60 /* Pods-ProductListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductListTests.release.xcconfig"; path = "Target Support Files/Pods-ProductListTests/Pods-ProductListTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				D726DC652A85595400CADA5B /* ProductsModel.swift */,
 				D726DC5B2A85499C00CADA5B /* ProductListModel.swift */,
 				D726DC632A85558600CADA5B /* SizeListModel.swift */,
+				D726DC7E2A85879000CADA5B /* ProductPromotionsModel.swift */,
+				D726DC802A8589E700CADA5B /* CustomFiltersModel.swift */,
 			);
 			path = ProductListModels;
 			sourceTree = "<group>";
@@ -577,10 +583,12 @@
 				D726DC702A857A0A00CADA5B /* ImagesModel.swift in Sources */,
 				D726DC642A85558600CADA5B /* SizeListModel.swift in Sources */,
 				D726DC082A8511BB00CADA5B /* AppDelegate.swift in Sources */,
+				D726DC7F2A85879000CADA5B /* ProductPromotionsModel.swift in Sources */,
 				D726DC662A85595400CADA5B /* ProductsModel.swift in Sources */,
 				D726DC722A857AE500CADA5B /* GtmModel.swift in Sources */,
 				D726DC4A2A851A8E00CADA5B /* LoadingProtocol.swift in Sources */,
 				D726DC4D2A851AB500CADA5B /* BlockingActivityIndicator.swift in Sources */,
+				D726DC812A8589E700CADA5B /* CustomFiltersModel.swift in Sources */,
 				D726DC442A85189600CADA5B /* BaseViewModel.swift in Sources */,
 				D726DC3D2A85131900CADA5B /* ProductListViewController.swift in Sources */,
 				D726DC742A857B5700CADA5B /* DescriptionModel.swift in Sources */,
@@ -775,8 +783,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProductList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -806,8 +813,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProductList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

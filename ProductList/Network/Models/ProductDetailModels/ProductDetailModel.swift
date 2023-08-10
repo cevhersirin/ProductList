@@ -6,44 +6,44 @@
 //
 
 struct Result: Decodable {
-
-  var productId                 : Int?
-  var externalSystemCode        : String?
-  var displayName               : String?
-  var description               : Description?
-  var estimatedSupplyDate       : String?
-  var brandName                 : String?
-  var actualPriceText           : String?
-  var actualPrice               : Int?
-  var isStrikeThroughPriceExist : Bool?
-  var strikeThroughPriceText    : String?
-  var strikeThroughPrice        : Int?
-  var discountRateText          : String?
-  var isVatIncluded             : Bool?
-  var vatRate                   : Int?
-  var hasHopiParacik            : Bool?
-  var hopiParacikText           : String?
-  var isPreOrder                : Bool?
-  var hasQuantitySelector       : Bool?
-  var isCosmeticProduct         : Bool?
-  var isBanned                  : Bool?
-  var isGiftCard                : Bool?
-  var isAppWidgetNotShown       : Bool?
-  var images                    : [Images]?
-  var otherColorList            : [OtherColorList]?
-  var tagAttributes             : String?
-  var installment               : Installment?
-  var contentUrl                : ContentUrl?
-  var categoryLink              : UrlModel?
-  var brandLink                 : UrlModel?
-  var bhareUrl                  : String?
-  var sizeSystem                : String?
-  var gtmModel                  : GtmModel?
-  var categoryId                : Int?
-  var categoryName              : String?
-  var breadcrumbCategory        : String?
-  var list                      : String?
-  var seller                    : Seller?
+    
+    var productId                 : Int?
+    var externalSystemCode        : String?
+    var displayName               : String?
+    var description               : Description?
+    var estimatedSupplyDate       : String?
+    var brandName                 : String?
+    var actualPriceText           : String?
+    var actualPrice               : Int?
+    var isStrikeThroughPriceExist : Bool?
+    var strikeThroughPriceText    : String?
+    var strikeThroughPrice        : Int?
+    var discountRateText          : String?
+    var isVatIncluded             : Bool?
+    var vatRate                   : Int?
+    var hasHopiParacik            : Bool?
+    var hopiParacikText           : String?
+    var isPreOrder                : Bool?
+    var hasQuantitySelector       : Bool?
+    var isCosmeticProduct         : Bool?
+    var isBanned                  : Bool?
+    var isGiftCard                : Bool?
+    var isAppWidgetNotShown       : Bool?
+    var images                    : [Images]?
+    var otherColorList            : [OtherColorList]?
+    var tagAttributes             : String?
+    var installment               : Installment?
+    var contentUrl                : ContentUrl?
+    var categoryLink              : UrlModel?
+    var brandLink                 : UrlModel?
+    var bhareUrl                  : String?
+    var sizeSystem                : String?
+    var gtmModel                  : GtmModel?
+    var categoryId                : Int?
+    var categoryName              : String?
+    var breadcrumbCategory        : String?
+    var list                      : String?
+    var seller                    : Seller?
     var maxProductQuantityCanSold : String?
     
     enum CodingKeys: String, CodingKey {

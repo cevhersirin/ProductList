@@ -11,6 +11,6 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.getProductList()
     }
 }

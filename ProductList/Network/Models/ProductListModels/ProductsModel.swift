@@ -12,7 +12,7 @@ struct Products: Decodable {
     var orderOption: String?
     var totalItemCount: Int?
     var totalPageCount: Int?
-    var customFilters: [String]?
+    var customFilters: CustomFilters?
     var sliderList: String?
     var category: String?
     var categoryId: Int?
@@ -49,7 +49,7 @@ struct Products: Decodable {
         self.orderOption = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.orderOption)
         self.totalItemCount = try container.decodeIfPresent(Int.self, forKey: Products.CodingKeys.totalItemCount)
         self.totalPageCount = try container.decodeIfPresent(Int.self, forKey: Products.CodingKeys.totalPageCount)
-        self.customFilters = try container.decodeIfPresent([String].self, forKey: Products.CodingKeys.customFilters)
+        self.customFilters = try container.decodeIfPresent(CustomFilters.self, forKey: Products.CodingKeys.customFilters)
         self.sliderList = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.sliderList)
         self.category = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.category)
         self.categoryId = try container.decodeIfPresent(Int.self, forKey: Products.CodingKeys.categoryId)

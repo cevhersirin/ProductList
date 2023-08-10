@@ -13,12 +13,12 @@ struct ProductList: Decodable {
     var imageUrl: String?
     var imageUrls: [String]?
     var strikeThroughPriceToShowOnScreenText : String?
-    var strikeThroughPriceToShowOnScreen: Int?
+    var strikeThroughPriceToShowOnScreen: Double?
     var actualPriceToShowOnScreenText: String?
-    var actualPriceToShowOnScreen: Int?
+    var actualPriceToShowOnScreen: Double?
     var isStrikeThroughPriceExists: Bool?
-    var discountRate: String?
-    var price: Int?
+    var discountRate: Int?
+    var price: Double?
     var cdnResizedImageUrl: String?
     var secondPrice: Int?
     var secondPriceText: String?
@@ -31,7 +31,7 @@ struct ProductList: Decodable {
     var color: String?
     var standartSize: String?
     var matchedVariantId: String?
-    var productPromotions: [String]?
+    var productPromotions: [ProductPromotions]?
     var productBadges: [String]?
     var isAdProduct: Bool?
     var productAdId: String?
@@ -84,12 +84,12 @@ struct ProductList: Decodable {
         self.imageUrl = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.imageUrl)
         self.imageUrls = try container.decodeIfPresent([String].self, forKey: ProductList.CodingKeys.imageUrls)
         self.strikeThroughPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.strikeThroughPriceToShowOnScreenText)
-        self.strikeThroughPriceToShowOnScreen = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.strikeThroughPriceToShowOnScreen)
+        self.strikeThroughPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.strikeThroughPriceToShowOnScreen)
         self.actualPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.actualPriceToShowOnScreenText)
-        self.actualPriceToShowOnScreen = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.actualPriceToShowOnScreen)
+        self.actualPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.actualPriceToShowOnScreen)
         self.isStrikeThroughPriceExists = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.isStrikeThroughPriceExists)
-        self.discountRate = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.discountRate)
-        self.price = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.price)
+        self.discountRate = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.discountRate)
+        self.price = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.price)
         self.cdnResizedImageUrl = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.cdnResizedImageUrl)
         self.secondPrice = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.secondPrice)
         self.secondPriceText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.secondPriceText)
@@ -102,7 +102,7 @@ struct ProductList: Decodable {
         self.color = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.color)
         self.standartSize = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.standartSize)
         self.matchedVariantId = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.matchedVariantId)
-        self.productPromotions = try container.decodeIfPresent([String].self, forKey: ProductList.CodingKeys.productPromotions)
+        self.productPromotions = try container.decodeIfPresent([ProductPromotions].self, forKey: ProductList.CodingKeys.productPromotions)
         self.productBadges = try container.decodeIfPresent([String].self, forKey: ProductList.CodingKeys.productBadges)
         self.isAdProduct = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.isAdProduct)
         self.productAdId = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.productAdId)
