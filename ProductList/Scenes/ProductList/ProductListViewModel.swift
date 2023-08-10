@@ -7,6 +7,6 @@
 
 import Foundation
 
-class ProductListViewModel {
+class ProductListViewModel: BaseViewModel {
     
 }
