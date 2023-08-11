@@ -12,4 +12,7 @@ class Endpoints {
     let listUrl = "https://www.beymen.com/Mobile2/api/mbproduct/list?siralama=akillisiralama&sayfa=1&categoryId=10020&includeDocuments=true"
     let detailUrl = "https://www.beymen.com/Mobile2/api/mbproduct/product?productid="
     
+    func getDetailUrl(productId: String) -> String{
+        return "https://www.beymen.com/Mobile2/api/mbproduct/product?productid=\(productId)"
+    }
 }

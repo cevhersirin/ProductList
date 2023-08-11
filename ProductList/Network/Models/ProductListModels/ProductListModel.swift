@@ -5,7 +5,7 @@
 //  Created by Cevher Şirin on 10.08.2023.
 //
 
-struct ProductList: Decodable {
+struct Product: Decodable {
     var productId: Int?
     var externalSystemCode: String?
     var displayName: String?
@@ -75,40 +75,40 @@ struct ProductList: Decodable {
     }
     
     init(from decoder: Decoder) throws {
-        let container: KeyedDecodingContainer<ProductList.CodingKeys> = try decoder.container(keyedBy: ProductList.CodingKeys.self)
+        let container: KeyedDecodingContainer<Product.CodingKeys> = try decoder.container(keyedBy: Product.CodingKeys.self)
         
-        self.productId = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.productId)
-        self.externalSystemCode = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.externalSystemCode)
-        self.displayName = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.displayName)
-        self.brandName = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.brandName)
-        self.imageUrl = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.imageUrl)
-        self.imageUrls = try container.decodeIfPresent([String].self, forKey: ProductList.CodingKeys.imageUrls)
-        self.strikeThroughPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.strikeThroughPriceToShowOnScreenText)
-        self.strikeThroughPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.strikeThroughPriceToShowOnScreen)
-        self.actualPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.actualPriceToShowOnScreenText)
-        self.actualPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.actualPriceToShowOnScreen)
-        self.isStrikeThroughPriceExists = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.isStrikeThroughPriceExists)
-        self.discountRate = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.discountRate)
-        self.price = try container.decodeIfPresent(Double.self, forKey: ProductList.CodingKeys.price)
-        self.cdnResizedImageUrl = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.cdnResizedImageUrl)
-        self.secondPrice = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.secondPrice)
-        self.secondPriceText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.secondPriceText)
-        self.showDefaultDiscountRate = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.showDefaultDiscountRate)
-        self.newDiscountRateText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.newDiscountRateText)
-        self.newDiscountRate = try container.decodeIfPresent(Int.self, forKey: ProductList.CodingKeys.newDiscountRate)
-        self.sizeSystem = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.sizeSystem)
-        self.isOutOfStock = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.isOutOfStock)
-        self.sizeList = try container.decodeIfPresent([SizeList].self, forKey: ProductList.CodingKeys.sizeList)
-        self.color = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.color)
-        self.standartSize = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.standartSize)
-        self.matchedVariantId = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.matchedVariantId)
-        self.productPromotions = try container.decodeIfPresent([ProductPromotions].self, forKey: ProductList.CodingKeys.productPromotions)
-        self.productBadges = try container.decodeIfPresent([String].self, forKey: ProductList.CodingKeys.productBadges)
-        self.isAdProduct = try container.decodeIfPresent(Bool.self, forKey: ProductList.CodingKeys.isAdProduct)
-        self.productAdId = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.productAdId)
-        self.productAdvertiserId = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.productAdvertiserId)
-        self.gowitDisplayText = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.gowitDisplayText)
-        self.advertiserUri = try container.decodeIfPresent(String.self, forKey: ProductList.CodingKeys.advertiserUri)
+        self.productId = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.productId)
+        self.externalSystemCode = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.externalSystemCode)
+        self.displayName = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.displayName)
+        self.brandName = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.brandName)
+        self.imageUrl = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.imageUrl)
+        self.imageUrls = try container.decodeIfPresent([String].self, forKey: Product.CodingKeys.imageUrls)
+        self.strikeThroughPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.strikeThroughPriceToShowOnScreenText)
+        self.strikeThroughPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: Product.CodingKeys.strikeThroughPriceToShowOnScreen)
+        self.actualPriceToShowOnScreenText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.actualPriceToShowOnScreenText)
+        self.actualPriceToShowOnScreen = try container.decodeIfPresent(Double.self, forKey: Product.CodingKeys.actualPriceToShowOnScreen)
+        self.isStrikeThroughPriceExists = try container.decodeIfPresent(Bool.self, forKey: Product.CodingKeys.isStrikeThroughPriceExists)
+        self.discountRate = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.discountRate)
+        self.price = try container.decodeIfPresent(Double.self, forKey: Product.CodingKeys.price)
+        self.cdnResizedImageUrl = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.cdnResizedImageUrl)
+        self.secondPrice = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.secondPrice)
+        self.secondPriceText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.secondPriceText)
+        self.showDefaultDiscountRate = try container.decodeIfPresent(Bool.self, forKey: Product.CodingKeys.showDefaultDiscountRate)
+        self.newDiscountRateText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.newDiscountRateText)
+        self.newDiscountRate = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.newDiscountRate)
+        self.sizeSystem = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.sizeSystem)
+        self.isOutOfStock = try container.decodeIfPresent(Bool.self, forKey: Product.CodingKeys.isOutOfStock)
+        self.sizeList = try container.decodeIfPresent([SizeList].self, forKey: Product.CodingKeys.sizeList)
+        self.color = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.color)
+        self.standartSize = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.standartSize)
+        self.matchedVariantId = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.matchedVariantId)
+        self.productPromotions = try container.decodeIfPresent([ProductPromotions].self, forKey: Product.CodingKeys.productPromotions)
+        self.productBadges = try container.decodeIfPresent([String].self, forKey: Product.CodingKeys.productBadges)
+        self.isAdProduct = try container.decodeIfPresent(Bool.self, forKey: Product.CodingKeys.isAdProduct)
+        self.productAdId = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.productAdId)
+        self.productAdvertiserId = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.productAdvertiserId)
+        self.gowitDisplayText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.gowitDisplayText)
+        self.advertiserUri = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.advertiserUri)
         
     }
 }

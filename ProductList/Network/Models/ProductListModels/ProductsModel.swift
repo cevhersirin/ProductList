@@ -6,7 +6,7 @@
 //
 
 struct Products: Decodable {
-    var productList: [ProductList]?
+    var productList: [Product]?
     var filters: String?
     var contentList: String?
     var orderOption: String?
@@ -43,7 +43,7 @@ struct Products: Decodable {
     init(from decoder: Decoder) throws {
         let container: KeyedDecodingContainer<Products.CodingKeys> = try decoder.container(keyedBy: Products.CodingKeys.self)
         
-        self.productList = try container.decodeIfPresent([ProductList].self, forKey: Products.CodingKeys.productList)
+        self.productList = try container.decodeIfPresent([Product].self, forKey: Products.CodingKeys.productList)
         self.filters = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.filters)
         self.contentList = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.contentList)
         self.orderOption = try container.decodeIfPresent(String.self, forKey: Products.CodingKeys.orderOption)
