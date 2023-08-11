@@ -57,9 +57,22 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
         return textView
     }()
     
+    private lazy var favButton: UIButton = {
+        let button = UIButton()
+        if viewModel.isFavorited ?? false {
+            button.setImage(UIImage(named: "heartFilled"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "heartEmpty"), for: .normal)
+        }
+        button.width(30)
+        button.height(30)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "productBackgroundColor")
+        self.navigationController?.navigationBar.tintColor = .black
         viewModel.getProductDetail()
         subscribeViewModel()
         configureContents()
@@ -82,6 +95,7 @@ extension ProductDetailViewController {
         addPageControl()
         addContentStackView()
         addInfoLabels()
+        addFavButton()
     }
     
     private func addCollectionView() {
@@ -146,6 +160,11 @@ extension ProductDetailViewController {
         let spacer = UIView()
         spacer.backgroundColor = .clear
         contentStackView.addArrangedSubview(spacer)
+    }
+    
+    private func addFavButton() {
+        view.addSubview(favButton)
+        favButton.edgesToSuperview(excluding: [.bottom, .left], insets: .right(20) + .top(20), usingSafeArea: true)
     }
     
     private func generateInfoLabel(font: UIFont, textAlignment: NSTextAlignment, textColor: UIColor, text: String) -> UILabel {

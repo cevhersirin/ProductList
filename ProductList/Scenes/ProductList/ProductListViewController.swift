@@ -66,7 +66,7 @@ extension ProductListViewController {
 //MARK: Actions
 extension ProductListViewController {
     func routeToDetail(productId: Int) {
-        let viewModel = ProductDetailViewModel(productId: productId)
+        let viewModel = ProductDetailViewModel(productId: productId, isFavorited: true)
         let viewController = ProductDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }

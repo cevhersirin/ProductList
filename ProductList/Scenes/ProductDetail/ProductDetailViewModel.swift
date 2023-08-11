@@ -11,9 +11,11 @@ class ProductDetailViewModel: BaseViewModel {
     
     public var productId: Int?
     public var productDetail: ProductDetail?
+    public var isFavorited: Bool?
     
-    public init(productId: Int?) {
+    public init(productId: Int?, isFavorited: Bool?) {
         self.productId = productId
+        self.isFavorited = isFavorited
     }
     
     var getDataSuccess: VoidClosure?
