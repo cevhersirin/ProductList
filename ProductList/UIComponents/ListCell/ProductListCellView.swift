@@ -14,7 +14,7 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
         stack.axis = .vertical
         stack.spacing = .zero
         stack.backgroundColor = .clear
-        stack.setCornerRadius(radius: 10)
+        stack.setTopCornerRadius(radius: 10)
         stack.clipsToBounds = true
         return stack
     }()
@@ -24,10 +24,21 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
         return imageView
     }()
     
+    private var informationsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = .zero
+        stack.backgroundColor = UIColor.init(named: "productBackgroundColor")
+        stack.setBottomCornerRadius(radius: 10)
+        stack.clipsToBounds = true
+        return stack
+    }()
+    
     private var displayNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        label.textColor = .white
+        label.textColor = .darkGray
+        label.numberOfLines = 0
         return label
     }()
     
@@ -50,22 +61,39 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
 extension ProductListCellView {
     
     private func addSubviews() {
+        backgroundColor = UIColor.init(named: "productBackgroundColor")
+        self.setCornerRadius(radius: 10)
         addContentStackView()
-        addImageView()
-        addDisplayNameLabe()
+        addInformationStack()
     }
     
     private func addContentStackView() {
         addSubview(contentStackView)
-        contentStackView.edgesToSuperview(insets: .bottom(10) + .left(10) + .top(10) + .right(10))
+        contentStackView.edgesToSuperview(excluding: .bottom, insets: .left(0) + .top(0) + .right(0))
+        addImageView()
     }
     
     private func addImageView() {
         contentStackView.addArrangedSubview(imageView)
     }
     
+    private func addInformationStack() {
+        addSubview(informationsStackView)
+        informationsStackView.topToBottom(of: contentStackView).constant = 5
+        informationsStackView.edgesToSuperview(excluding: .top, insets: .left(5) + .bottom(0) + .right(5))
+        informationsStackView.height(60)
+        addDisplayNameLabe()
+        addSpacer()
+    }
+    
     private func addDisplayNameLabe() {
-        contentStackView.addArrangedSubview(displayNameLabel)
+        informationsStackView.addArrangedSubview(displayNameLabel)
+    }
+    
+    private func addSpacer() {
+        let spacer = UIView()
+        spacer.backgroundColor = .clear
+        informationsStackView.addArrangedSubview(spacer)
     }
 }
 

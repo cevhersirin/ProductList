@@ -58,7 +58,7 @@ extension ProductListViewController {
     
     private func addCollectionView() {
         view.addSubview(collectionView)
-        collectionView.edgesToSuperview(usingSafeArea: true)
+        collectionView.edgesToSuperview(usingSafeArea: false)
     }
 }
 
