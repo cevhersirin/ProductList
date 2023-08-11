@@ -11,7 +11,7 @@ struct Description: Decodable {
     var urunKodu: String?
     
     enum CodingKeys: String, CodingKey {
-        case ozellikler = "Özellikler"
+        case ozellikler = "Özellikler :"
         case urunKodu = "ÜrünKodu"
     }
     

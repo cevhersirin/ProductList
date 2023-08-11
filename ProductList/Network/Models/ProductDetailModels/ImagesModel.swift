@@ -7,8 +7,8 @@
 
 struct Images: Decodable {
     
-    var displayOrder : Int?      = nil
-    var images       : [Images]? = []
+    var displayOrder: Int?
+    var images: [Image]?
     
     enum CodingKeys: String, CodingKey {
         case displayOrder = "DisplayOrder"
@@ -19,7 +19,7 @@ struct Images: Decodable {
         let container: KeyedDecodingContainer<Images.CodingKeys> = try decoder.container(keyedBy: Images.CodingKeys.self)
         
         self.displayOrder = try container.decodeIfPresent(Int.self, forKey: Images.CodingKeys.displayOrder)
-        self.images = try container.decodeIfPresent([Images].self, forKey: Images.CodingKeys.images)
+        self.images = try container.decodeIfPresent([Image].self, forKey: Images.CodingKeys.images)
         
     }
 }

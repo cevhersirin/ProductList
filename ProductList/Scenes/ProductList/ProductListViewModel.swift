@@ -26,4 +26,5 @@ class ProductListViewModel: BaseViewModel {
         guard let product = products?.productList?[indexPath.row] else { return nil }
         return product
     }
+    
 }

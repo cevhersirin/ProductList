@@ -12,10 +12,11 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.register(ProductListCellView.self, forCellWithReuseIdentifier: ProductListCellView.reuseIdentifier)
         collectionView.backgroundColor = .clear
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
        return collectionView
     }()
     
-    private let cellHalfWidth = Screen.halfWidth - 5
+    private let cellHalfWidth = Screen.halfWidth - 15
     private let cellFullWidth = Screen.width - 5
 
     override func viewDidLoad() {
@@ -26,19 +27,6 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         configureContents()
         
         title = "Urunler"
-        
-        let button = UIButton()
-        view.addSubview(button)
-        button.setTitle("Push", for: .normal)
-        button.centerInSuperview()
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-    }
-    
-    @objc
-    func buttonAction() {
-        let viewModel = ProductDetailViewModel()
-        let detailVC = ProductDetailViewController(viewModel: viewModel)
-        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func subscribeViewModel() {
@@ -75,6 +63,15 @@ extension ProductListViewController {
     }
 }
 
+//MARK: Actions
+extension ProductListViewController {
+    func routeToDetail(productId: Int) {
+        let viewModel = ProductDetailViewModel(productId: productId)
+        let viewController = ProductDetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 //MARK: CollectionView DataSource
 extension ProductListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,6 +93,11 @@ extension ProductListViewController: UICollectionViewDataSource {
 //MARK: CollectionView Delegate
 extension ProductListViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedProduct = viewModel.getProduct(indexPath: indexPath) else { return }
+        guard let id = selectedProduct.productId else { return }
+        routeToDetail(productId: id)
+    }
     
 }
 
