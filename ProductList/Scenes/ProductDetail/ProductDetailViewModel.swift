@@ -12,10 +12,12 @@ class ProductDetailViewModel: BaseViewModel {
     public var productId: Int?
     public var productDetail: ProductDetail?
     public var isFavorited: Bool?
+    public var favoritedItemIds: [Int]?
     
     public init(productId: Int?, isFavorited: Bool?) {
         self.productId = productId
         self.isFavorited = isFavorited
+        self.favoritedItemIds = UserDefaults.standard.value(forKey: "favorites") as? [Int]
     }
     
     var getDataSuccess: VoidClosure?
@@ -54,5 +56,25 @@ class ProductDetailViewModel: BaseViewModel {
             }
         }
         return imageList
+    }
+    
+    public func addFavAction() {
+        guard let id = productId else { return }
+        favoritedItemIds?.append(id)
+        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
+        isFavorited = isFavoritedItem()
+    }
+    
+    public func removeFavAction() {
+        guard let id = productId else { return }
+        favoritedItemIds?.removeAll(where: { $0 == id })
+        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
+        isFavorited = isFavoritedItem()
+    }
+    
+    func isFavoritedItem() -> Bool {
+        guard let id = productId else { return false }
+        guard let favoritedItemIds else { return false }
+        return favoritedItemIds.contains(id)
     }
 }

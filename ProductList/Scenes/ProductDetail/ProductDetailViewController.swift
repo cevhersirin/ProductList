@@ -57,13 +57,8 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
         return textView
     }()
     
-    private lazy var favButton: UIButton = {
+    private var favButton: UIButton = {
         let button = UIButton()
-        if viewModel.isFavorited ?? false {
-            button.setImage(UIImage(named: "heartFilled"), for: .normal)
-        } else {
-            button.setImage(UIImage(named: "heartEmpty"), for: .normal)
-        }
         button.width(30)
         button.height(30)
         return button
@@ -84,6 +79,16 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
             addSubviews()
             self.imageCollectionView.reloadData()
         }
+    }
+    
+    @objc
+    private func favButtonTapped() {
+        if viewModel.isFavorited ?? false {
+            viewModel.removeFavAction()
+        } else {
+            viewModel.addFavAction()
+        }
+        configureFavButton()
     }
 }
 
@@ -165,6 +170,7 @@ extension ProductDetailViewController {
     private func addFavButton() {
         view.addSubview(favButton)
         favButton.edgesToSuperview(excluding: [.bottom, .left], insets: .right(20) + .top(20), usingSafeArea: true)
+        favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
     }
     
     private func generateInfoLabel(font: UIFont, textAlignment: NSTextAlignment, textColor: UIColor, text: String) -> UILabel {
@@ -183,11 +189,20 @@ extension ProductDetailViewController {
     
     private func configureContents() {
         configureCollectionView()
+        configureFavButton()
     }
     
     private func configureCollectionView() {
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
+    }
+    
+    private func configureFavButton() {
+        if viewModel.isFavorited ?? false {
+            favButton.setImage(UIImage(named: "heartFilled"), for: .normal)
+        } else {
+            favButton.setImage(UIImage(named: "heartEmpty"), for: .normal)
+        }
     }
 }
 

@@ -24,6 +24,11 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
         return imageView
     }()
     
+    private var favoritedImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
     private var informationsStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -65,6 +70,7 @@ extension ProductListCellView {
         self.setCornerRadius(radius: 10)
         addContentStackView()
         addInformationStack()
+        addFavoritedImage()
     }
     
     private func addContentStackView() {
@@ -95,6 +101,13 @@ extension ProductListCellView {
         spacer.backgroundColor = .clear
         informationsStackView.addArrangedSubview(spacer)
     }
+    
+    private func addFavoritedImage() {
+        addSubview(favoritedImageView)
+        favoritedImageView.edgesToSuperview(excluding: [.bottom, .left], insets: .right(5) + .top(5))
+        favoritedImageView.width(20)
+        favoritedImageView.height(20)
+    }
 }
 
 //MARK: Configure
@@ -105,5 +118,12 @@ extension ProductListCellView {
             imageView.kf.setImage(with: url)
         }
         displayNameLabel.text = viewModel.productDisplayName
+        
+        if viewModel.isFavoritedItem ?? false {
+            favoritedImageView.isHidden = false
+            favoritedImageView.image = UIImage(named: "heartFilled")
+        } else {
+            favoritedImageView.isHidden = true
+        }
     }
 }

@@ -29,10 +29,20 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         title = "Urunler"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.checkForUserDefaults()
+        collectionView.reloadData()
+    }
+    
     func subscribeViewModel() {
         viewModel.getDataSuccess = { [weak self] in
             guard let self else { return }
             collectionView.reloadData()
+        }
+        viewModel.reloadCell = { [weak self] indexPath in
+            guard let self else { return }
+            collectionView.reloadItems(at: [indexPath])
         }
     }
 }
@@ -65,11 +75,41 @@ extension ProductListViewController {
 
 //MARK: Actions
 extension ProductListViewController {
-    func routeToDetail(productId: Int) {
-        let viewModel = ProductDetailViewModel(productId: productId, isFavorited: true)
+    private func routeToDetail(productId: Int, indexPath: IndexPath) {
+        let isFavorited = viewModel.isFavoritedItem(indexPath: indexPath)
+        let viewModel = ProductDetailViewModel(productId: productId, isFavorited: isFavorited)
         let viewController = ProductDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    private func configureContextMenu(indexPath: IndexPath) -> UIContextMenuConfiguration{
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] (action) -> UIMenu? in
+            guard let self else { return nil }
+            if self.viewModel.isFavoritedItem(indexPath: indexPath) {
+                let fav = UIAction(title: "Remove from Favorites", image: UIImage(named: "heartFilled"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (_) in
+                    guard let self else { return }
+                    self.unFavAction(indexPath: indexPath)
+                }
+                return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [fav])
+            } else {
+                let fav = UIAction(title: "Add to Favorites", image: UIImage(named: "heartEmpty"), identifier: nil, discoverabilityTitle: nil, state: .off) { [weak self] (_) in
+                    guard let self else { return }
+                    self.favAction(indexPath: indexPath)
+                }
+                return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [fav])
+            }
+        }
+        return context
+    }
+    
+    private func favAction(indexPath: IndexPath) {
+        viewModel.addFavAction(indexPath: indexPath)
+    }
+    
+    private func unFavAction(indexPath: IndexPath) {
+        viewModel.removeFavAction(indexPath: indexPath)
+    }
+    
 }
 
 //MARK: CollectionView DataSource
@@ -83,8 +123,9 @@ extension ProductListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let product = viewModel.getProduct(indexPath: indexPath) else { return UICollectionViewCell() }
+        let isFavoritedItem = viewModel.isFavoritedItem(indexPath: indexPath)
         let cell: ProductListCellView = collectionView.dequeueReusableCell(for: indexPath)
-        let cellModel = ProductListCellViewModel(productId: product.productId, imageUrl: product.imageUrl, productDisplayName: product.displayName)
+        let cellModel = ProductListCellViewModel(productId: product.productId, imageUrl: product.imageUrl, productDisplayName: product.displayName, isFavoritedItem: isFavoritedItem)
         cell.setCell(viewModel: cellModel)
         return cell
     }
@@ -96,9 +137,12 @@ extension ProductListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedProduct = viewModel.getProduct(indexPath: indexPath) else { return }
         guard let id = selectedProduct.productId else { return }
-        routeToDetail(productId: id)
+        routeToDetail(productId: id, indexPath: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+            configureContextMenu(indexPath: indexPath)
+    }
 }
 
 //MARK: CollectionView FlowLayout
