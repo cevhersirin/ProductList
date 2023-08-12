@@ -66,11 +66,8 @@ class BaseViewModel: BaseViewModelProtocol {
     
     func goBack() {}
     
-    #if DEBUG || DEVELOP || TEST
     deinit {
         debugPrint("deinit \(self)")
     }
-    #endif
-    
 }
 

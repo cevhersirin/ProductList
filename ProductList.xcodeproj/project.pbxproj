@@ -11,7 +11,6 @@
 		6CFE06B56E9404CF0D7D5673 /* Pods_ProductListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E3CC296FBF281736D89DDB /* Pods_ProductListTests.framework */; };
 		D726DC082A8511BB00CADA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC072A8511BB00CADA5B /* AppDelegate.swift */; };
 		D726DC0A2A8511BB00CADA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC092A8511BB00CADA5B /* SceneDelegate.swift */; };
-		D726DC0F2A8511BB00CADA5B /* ProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726DC0D2A8511BB00CADA5B /* ProductList.storyboard */; };
 		D726DC122A8511BB00CADA5B /* ProductList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D726DC102A8511BB00CADA5B /* ProductList.xcdatamodeld */; };
 		D726DC142A8511BC00CADA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D726DC132A8511BC00CADA5B /* Assets.xcassets */; };
 		D726DC172A8511BC00CADA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726DC152A8511BC00CADA5B /* LaunchScreen.storyboard */; };
@@ -45,7 +44,6 @@
 		D726DC812A8589E700CADA5B /* CustomFiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC802A8589E700CADA5B /* CustomFiltersModel.swift */; };
 		D726DC842A858C3200CADA5B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC832A858C3200CADA5B /* ProductDetailViewController.swift */; };
 		D726DC862A858C4200CADA5B /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC852A858C4200CADA5B /* ProductDetailViewModel.swift */; };
-		D726DC882A858E2200CADA5B /* ProductDetailStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726DC872A858E2200CADA5B /* ProductDetailStoryBoard.storyboard */; };
 		D726DC8B2A862C4E00CADA5B /* ProductListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC8A2A862C4E00CADA5B /* ProductListCellView.swift */; };
 		D726DC8D2A862C5900CADA5B /* ProductListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC8C2A862C5900CADA5B /* ProductListCellViewModel.swift */; };
 		D726DC902A864FE500CADA5B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC8F2A864FE500CADA5B /* UIView+Extensions.swift */; };
@@ -93,7 +91,6 @@
 		D726DC042A8511BB00CADA5B /* ProductList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D726DC072A8511BB00CADA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D726DC092A8511BB00CADA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D726DC0E2A8511BB00CADA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProductList.storyboard; sourceTree = "<group>"; };
 		D726DC112A8511BB00CADA5B /* ProductList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductList.xcdatamodel; sourceTree = "<group>"; };
 		D726DC132A8511BC00CADA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D726DC162A8511BC00CADA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +128,6 @@
 		D726DC802A8589E700CADA5B /* CustomFiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFiltersModel.swift; sourceTree = "<group>"; };
 		D726DC832A858C3200CADA5B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D726DC852A858C4200CADA5B /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
-		D726DC872A858E2200CADA5B /* ProductDetailStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetailStoryBoard.storyboard; sourceTree = "<group>"; };
 		D726DC8A2A862C4E00CADA5B /* ProductListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCellView.swift; sourceTree = "<group>"; };
 		D726DC8C2A862C5900CADA5B /* ProductListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCellViewModel.swift; sourceTree = "<group>"; };
 		D726DC8F2A864FE500CADA5B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -279,7 +275,6 @@
 		D726DC3B2A8511F800CADA5B /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
-				D726DC0D2A8511BB00CADA5B /* ProductList.storyboard */,
 				D726DC3C2A85131900CADA5B /* ProductListViewController.swift */,
 				D726DC3E2A85173B00CADA5B /* ProductListViewModel.swift */,
 			);
@@ -385,7 +380,6 @@
 		D726DC822A858C1200CADA5B /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				D726DC872A858E2200CADA5B /* ProductDetailStoryBoard.storyboard */,
 				D726DC832A858C3200CADA5B /* ProductDetailViewController.swift */,
 				D726DC852A858C4200CADA5B /* ProductDetailViewModel.swift */,
 			);
@@ -568,8 +562,6 @@
 			files = (
 				D726DC172A8511BC00CADA5B /* LaunchScreen.storyboard in Resources */,
 				D726DC142A8511BC00CADA5B /* Assets.xcassets in Resources */,
-				D726DC882A858E2200CADA5B /* ProductDetailStoryBoard.storyboard in Resources */,
-				D726DC0F2A8511BB00CADA5B /* ProductList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,14 +772,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D726DC0D2A8511BB00CADA5B /* ProductList.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D726DC0E2A8511BB00CADA5B /* Base */,
-			);
-			name = ProductList.storyboard;
-			sourceTree = "<group>";
-		};
 		D726DC152A8511BC00CADA5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -38,11 +38,9 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
         viewModel.tryAgainButtonTapped()
     }
     
-#if DEBUG || DEVELOP || TEST
     deinit {
         debugPrint("deinit \(self)")
     }
-#endif
     
     private class BackBarButtonItem: UIBarButtonItem {
         @available(iOS 14.0, *)
