@@ -32,6 +32,8 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
         let pageController = UIPageControl()
         pageController.currentPage = 0
         pageController.isUserInteractionEnabled = false
+        pageController.currentPageIndicatorTintColor = .darkGray
+        pageController.pageIndicatorTintColor = .lightGray
         return pageController
     }()
     
