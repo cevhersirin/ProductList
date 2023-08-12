@@ -16,8 +16,8 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
        return collectionView
     }()
     
-    private let cellHalfWidth = Screen.halfWidth - 15
-    private let cellFullWidth = Screen.width - 5
+    private var cellWidth = Screen.halfWidth - 15
+    private var cellHeight = CGFloat(300)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,9 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         configureContents()
         
         title = "Urunler"
+        var image = UIImage(named: "menuSquare")?.resize(to: CGSize(width: 20, height: 20))
+        image = image?.withRenderingMode(.alwaysOriginal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image , style: .plain, target: self, action: #selector(rightBarButtonTapped))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +46,28 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         viewModel.reloadCell = { [weak self] indexPath in
             guard let self else { return }
             collectionView.reloadItems(at: [indexPath])
+        }
+    }
+    
+    @objc
+    func rightBarButtonTapped() {
+        switch viewModel.listContentMode {
+        case .full:
+            viewModel.listContentMode = .half
+            var image = UIImage(named: "menuSquare")?.resize(to: CGSize(width: 20, height: 20))
+            image = image?.withRenderingMode(.alwaysOriginal)
+            navigationItem.rightBarButtonItem?.image = image
+            cellWidth = Screen.halfWidth - 15
+            cellHeight = CGFloat(300)
+            collectionView.reloadData()
+        case .half:
+            viewModel.listContentMode = .full
+            var image = UIImage(named: "menuLine")?.resize(to: CGSize(width: 20, height: 20))
+            image = image?.withRenderingMode(.alwaysOriginal)
+            navigationItem.rightBarButtonItem?.image = image
+            cellWidth = Screen.width - 5
+            cellHeight = CGFloat(500)
+            collectionView.reloadData()
         }
     }
 }
@@ -148,6 +173,6 @@ extension ProductListViewController: UICollectionViewDelegate {
 //MARK: CollectionView FlowLayout
 extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellHalfWidth, height: 300)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }

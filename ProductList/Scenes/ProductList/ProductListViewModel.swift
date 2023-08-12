@@ -13,6 +13,7 @@ class ProductListViewModel: BaseViewModel {
     public var getDataSuccess: VoidClosure?
     public var reloadCell: IndexPathClosure?
     public var favoritedItemIds: [Int]?
+    public var listContentMode: ListContentMode = .half
     
     override init() {
         super.init()
