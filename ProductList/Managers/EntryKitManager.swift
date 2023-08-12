@@ -19,8 +19,8 @@ class EntryKitManager {
         attributes.entranceAnimation = .translation
         attributes.exitAnimation = .translation
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.3, radius: 20, offset: .zero))
-        attributes.entryBackground = .color(color: EKColor(light: UIColor(named: "bottomMessageColor") ?? .blue,
-                                                           dark: UIColor(named: "bottomMessageColor") ?? .lightGray))
+        attributes.entryBackground = .color(color: EKColor(light: UIColorConstants.shared.bottomMessageColor ?? .blue,
+                                                           dark: UIColorConstants.shared.bottomMessageColor ?? .blue))
         attributes.displayDuration = .pi
         
         let title = EKProperty.LabelContent(

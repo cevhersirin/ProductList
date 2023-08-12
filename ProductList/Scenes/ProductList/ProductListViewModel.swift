@@ -42,12 +42,12 @@ class ProductListViewModel: BaseViewModel {
     }
     
     func checkForUserDefaults() {
-        if UserDefaults.standard.value(forKey: "firstLaunch") == nil {
-            UserDefaults.standard.set(true, forKey: "firstLaunch")
+        if UserDefaults.standard.value(forKey: UserDefaultKeys.shared.firstLaunch) == nil {
+            UserDefaults.standard.set(true, forKey: UserDefaultKeys.shared.firstLaunch)
             let array: [Int] = []
-            UserDefaults.standard.set(array, forKey: "favorites")
+            UserDefaults.standard.set(array, forKey: UserDefaultKeys.shared.favorites)
         }
-        favoritedItemIds = UserDefaults.standard.value(forKey: "favorites") as? [Int]
+        favoritedItemIds = UserDefaults.standard.value(forKey: UserDefaultKeys.shared.favorites) as? [Int]
     }
     
     func getProduct(indexPath: IndexPath) -> Product? {
@@ -63,16 +63,22 @@ class ProductListViewModel: BaseViewModel {
     func addFavAction(indexPath: IndexPath) {
         guard let id = getProductId(indexPath: indexPath) else { return }
         favoritedItemIds?.append(id)
-        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
-        EntryKitManager.showBottomMessage(title: "Harika!", desc: "Ürün favorilerinize eklendi.", textColor: .white, imageName: "heartSmile")
+        UserDefaults.standard.set(favoritedItemIds, forKey: UserDefaultKeys.shared.favorites)
+        EntryKitManager.showBottomMessage(title: StringConstants.shared.addedFavoritedTitle,
+                                          desc: StringConstants.shared.addedFavoritedTitle,
+                                          textColor: .white,
+                                          imageName: "heartSmile")
         reloadCell?(indexPath)
     }
     
     func removeFavAction(indexPath: IndexPath) {
         guard let id = getProductId(indexPath: indexPath) else { return }
         favoritedItemIds?.removeAll(where: { $0 == id })
-        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
-        EntryKitManager.showBottomMessage(title: "Üzüldük", desc: "Ürün favorilerinizden çıkarıldı.", textColor: .white, imageName: "heartCross")
+        UserDefaults.standard.set(favoritedItemIds, forKey: UserDefaultKeys.shared.favorites)
+        EntryKitManager.showBottomMessage(title: StringConstants.shared.removedFavoritedTitle,
+                                          desc: StringConstants.shared.removedFavoritedDesc,
+                                          textColor: .white,
+                                          imageName: "heartCross")
         reloadCell?(indexPath)
     }
     

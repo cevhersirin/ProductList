@@ -29,7 +29,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
     }
     
     private func configureContents() {
-        view.backgroundColor = UIColor.init(named: "backgroundColor")
+        view.backgroundColor = UIColorConstants.shared.backgroundColor
         navigationItem.backBarButtonItem = BackBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     

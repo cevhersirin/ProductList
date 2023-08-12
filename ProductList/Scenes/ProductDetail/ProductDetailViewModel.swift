@@ -17,7 +17,7 @@ class ProductDetailViewModel: BaseViewModel {
     public init(productId: Int?, isFavorited: Bool?) {
         self.productId = productId
         self.isFavorited = isFavorited
-        self.favoritedItemIds = UserDefaults.standard.value(forKey: "favorites") as? [Int]
+        self.favoritedItemIds = UserDefaults.standard.value(forKey: UserDefaultKeys.shared.favorites) as? [Int]
     }
     
     var getDataSuccess: VoidClosure?
@@ -61,16 +61,22 @@ class ProductDetailViewModel: BaseViewModel {
     public func addFavAction() {
         guard let id = productId else { return }
         favoritedItemIds?.append(id)
-        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
-        EntryKitManager.showBottomMessage(title: "Harika!", desc: "Ürün favorilerinize eklendi.", textColor: .white, imageName: "heartSmile")
+        UserDefaults.standard.set(favoritedItemIds, forKey: UserDefaultKeys.shared.favorites)
+        EntryKitManager.showBottomMessage(title: StringConstants.shared.addedFavoritedTitle,
+                                          desc: StringConstants.shared.addedFavoritedTitle,
+                                          textColor: .white,
+                                          imageName: "heartSmile")
         isFavorited = isFavoritedItem()
     }
     
     public func removeFavAction() {
         guard let id = productId else { return }
         favoritedItemIds?.removeAll(where: { $0 == id })
-        UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
-        EntryKitManager.showBottomMessage(title: "Üzüldük", desc: "Ürün favorilerinizden çıkarıldı.", textColor: .white, imageName: "heartCross")
+        UserDefaults.standard.set(favoritedItemIds, forKey: UserDefaultKeys.shared.favorites)
+        EntryKitManager.showBottomMessage(title: StringConstants.shared.removedFavoritedTitle,
+                                          desc: StringConstants.shared.removedFavoritedDesc,
+                                          textColor: .white,
+                                          imageName: "heartCross")
         isFavorited = isFavoritedItem()
     }
     

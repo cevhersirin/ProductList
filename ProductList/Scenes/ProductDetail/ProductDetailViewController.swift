@@ -68,7 +68,7 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "productBackgroundColor")
+        view.backgroundColor = UIColorConstants.shared.productBackgroundColor
         self.navigationController?.navigationBar.tintColor = .black
         viewModel.getProductDetail()
         subscribeViewModel()

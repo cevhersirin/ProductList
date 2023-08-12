@@ -59,6 +59,10 @@
 		D72B85A82A871D0C00BC7591 /* ListContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85A72A871D0C00BC7591 /* ListContentMode.swift */; };
 		D72B85B02A878F3900BC7591 /* EntryKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85AF2A878F3900BC7591 /* EntryKitManager.swift */; };
 		D72B85B22A87901400BC7591 /* UIAplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85B12A87901400BC7591 /* UIAplication+Extensions.swift */; };
+		D72B85B52A87967D00BC7591 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85B42A87967D00BC7591 /* StringConstants.swift */; };
+		D72B85B72A8797BD00BC7591 /* UserDetaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85B62A8797BD00BC7591 /* UserDetaultKeys.swift */; };
+		D72B85B92A87988700BC7591 /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85B82A87988700BC7591 /* UIImageConstants.swift */; };
+		D72B85BB2A8799D600BC7591 /* UIColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85BA2A8799D600BC7591 /* UIColorConstants.swift */; };
 		EDE22D2ADA9203AFE5F5A158 /* Pods_ProductList_ProductListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +145,10 @@
 		D72B85A72A871D0C00BC7591 /* ListContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentMode.swift; sourceTree = "<group>"; };
 		D72B85AF2A878F3900BC7591 /* EntryKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryKitManager.swift; sourceTree = "<group>"; };
 		D72B85B12A87901400BC7591 /* UIAplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication+Extensions.swift"; sourceTree = "<group>"; };
+		D72B85B42A87967D00BC7591 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		D72B85B62A8797BD00BC7591 /* UserDetaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetaultKeys.swift; sourceTree = "<group>"; };
+		D72B85B82A87988700BC7591 /* UIImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
+		D72B85BA2A8799D600BC7591 /* UIColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorConstants.swift; sourceTree = "<group>"; };
 		D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList_ProductListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBCDD3A4608B2760DE6CCDD /* Pods_ProductList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E616FB7C5EE2D8405A3C6F60 /* Pods-ProductListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductListTests.release.xcconfig"; path = "Target Support Files/Pods-ProductListTests/Pods-ProductListTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -440,6 +448,10 @@
 		D72B85B32A87965F00BC7591 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				D72B85B42A87967D00BC7591 /* StringConstants.swift */,
+				D72B85B62A8797BD00BC7591 /* UserDetaultKeys.swift */,
+				D72B85B82A87988700BC7591 /* UIImageConstants.swift */,
+				D72B85BA2A8799D600BC7591 /* UIColorConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -693,10 +705,12 @@
 				D726DC922A866B9B00CADA5B /* UICollectionView+Excensions.swift in Sources */,
 				D72B85B22A87901400BC7591 /* UIAplication+Extensions.swift in Sources */,
 				D726DC3F2A85173C00CADA5B /* ProductListViewModel.swift in Sources */,
+				D72B85B72A8797BD00BC7591 /* UserDetaultKeys.swift in Sources */,
 				D72B85A52A871BFE00BC7591 /* UIImage+Extensions.swift in Sources */,
 				D726DC6E2A85799B00CADA5B /* InstallmentModel.swift in Sources */,
 				D726DC512A851C7D00CADA5B /* ActivityIndicatorView.swift in Sources */,
 				D726DC8B2A862C4E00CADA5B /* ProductListCellView.swift in Sources */,
+				D72B85B52A87967D00BC7591 /* StringConstants.swift in Sources */,
 				D72B85B02A878F3900BC7591 /* EntryKitManager.swift in Sources */,
 				D726DC6A2A855B8200CADA5B /* SellerModel.swift in Sources */,
 				D726DC702A857A0A00CADA5B /* ImagesModel.swift in Sources */,
@@ -704,6 +718,7 @@
 				D726DC082A8511BB00CADA5B /* AppDelegate.swift in Sources */,
 				D726DC7F2A85879000CADA5B /* ProductPromotionsModel.swift in Sources */,
 				D726DC992A86AA7100CADA5B /* DetailImageCollectionCellView.swift in Sources */,
+				D72B85B92A87988700BC7591 /* UIImageConstants.swift in Sources */,
 				D726DC662A85595400CADA5B /* ProductsModel.swift in Sources */,
 				D726DC842A858C3200CADA5B /* ProductDetailViewController.swift in Sources */,
 				D726DC722A857AE500CADA5B /* GtmModel.swift in Sources */,
@@ -728,6 +743,7 @@
 				D726DC762A857CC700CADA5B /* ContentUrlModel.swift in Sources */,
 				D726DC9E2A86B1A200CADA5B /* ImageModel.swift in Sources */,
 				D726DC952A866BC900CADA5B /* ReusableView.swift in Sources */,
+				D72B85BB2A8799D600BC7591 /* UIColorConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

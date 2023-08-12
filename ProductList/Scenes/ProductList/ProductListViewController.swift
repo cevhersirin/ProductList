@@ -26,8 +26,8 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         addSubviews()
         configureContents()
         
-        title = "Urunler"
-        var image = UIImage(named: "menuSquare")?.resize(to: CGSize(width: 20, height: 20))
+        title = StringConstants.shared.listScreenTitle
+        var image = UIImageConstants.shared.menuSquare?.resize(to: CGSize(width: 20, height: 20))
         image = image?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image , style: .plain, target: self, action: #selector(rightBarButtonTapped))
     }
@@ -54,7 +54,7 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
         switch viewModel.listContentMode {
         case .full:
             viewModel.listContentMode = .half
-            var image = UIImage(named: "menuSquare")?.resize(to: CGSize(width: 20, height: 20))
+            var image = UIImageConstants.shared.menuSquare?.resize(to: CGSize(width: 20, height: 20))
             image = image?.withRenderingMode(.alwaysOriginal)
             navigationItem.rightBarButtonItem?.image = image
             cellWidth = Screen.halfWidth - 15
@@ -62,7 +62,7 @@ class ProductListViewController: BaseViewController<ProductListViewModel> {
             collectionView.reloadData()
         case .half:
             viewModel.listContentMode = .full
-            var image = UIImage(named: "menuLine")?.resize(to: CGSize(width: 20, height: 20))
+            var image = UIImageConstants.shared.menuLine?.resize(to: CGSize(width: 20, height: 20))
             image = image?.withRenderingMode(.alwaysOriginal)
             navigationItem.rightBarButtonItem?.image = image
             cellWidth = Screen.width - 5

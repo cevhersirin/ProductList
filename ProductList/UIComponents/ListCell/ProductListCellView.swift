@@ -33,7 +33,7 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = .zero
-        stack.backgroundColor = UIColor.init(named: "productBackgroundColor")
+        stack.backgroundColor = UIColorConstants.shared.productBackgroundColor
         stack.setBottomCornerRadius(radius: 10)
         stack.clipsToBounds = true
         return stack
@@ -66,7 +66,7 @@ class ProductListCellView: UICollectionViewCell, ReusableView {
 extension ProductListCellView {
     
     private func addSubviews() {
-        backgroundColor = UIColor.init(named: "productBackgroundColor")
+        backgroundColor = UIColorConstants.shared.productBackgroundColor
         self.setCornerRadius(radius: 10)
         addContentStackView()
         addInformationStack()
