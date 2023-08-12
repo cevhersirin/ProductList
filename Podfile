@@ -13,6 +13,7 @@ target 'ProductList' do
   # UI
   pod 'TinyConstraints', '~> 4.0'
   pod 'Kingfisher', '~> 6.3'
+  pod 'SwiftEntryKit', '~> 2.0'
 
   target 'ProductListTests' do
     inherit! :search_paths

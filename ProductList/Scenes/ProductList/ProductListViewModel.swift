@@ -64,6 +64,7 @@ class ProductListViewModel: BaseViewModel {
         guard let id = getProductId(indexPath: indexPath) else { return }
         favoritedItemIds?.append(id)
         UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
+        EntryKitManager.showBottomMessage(title: "Harika!", desc: "Ürün favorilerinize eklendi.", textColor: .white, imageName: "heartSmile")
         reloadCell?(indexPath)
     }
     
@@ -71,6 +72,7 @@ class ProductListViewModel: BaseViewModel {
         guard let id = getProductId(indexPath: indexPath) else { return }
         favoritedItemIds?.removeAll(where: { $0 == id })
         UserDefaults.standard.set(favoritedItemIds, forKey: "favorites")
+        EntryKitManager.showBottomMessage(title: "Üzüldük", desc: "Ürün favorilerinizden çıkarıldı.", textColor: .white, imageName: "heartCross")
         reloadCell?(indexPath)
     }
     

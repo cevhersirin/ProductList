@@ -57,6 +57,8 @@
 		D726DC9E2A86B1A200CADA5B /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DC9D2A86B1A200CADA5B /* ImageModel.swift */; };
 		D72B85A52A871BFE00BC7591 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85A42A871BFE00BC7591 /* UIImage+Extensions.swift */; };
 		D72B85A82A871D0C00BC7591 /* ListContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85A72A871D0C00BC7591 /* ListContentMode.swift */; };
+		D72B85B02A878F3900BC7591 /* EntryKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85AF2A878F3900BC7591 /* EntryKitManager.swift */; };
+		D72B85B22A87901400BC7591 /* UIAplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72B85B12A87901400BC7591 /* UIAplication+Extensions.swift */; };
 		EDE22D2ADA9203AFE5F5A158 /* Pods_ProductList_ProductListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +139,8 @@
 		D726DC9D2A86B1A200CADA5B /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		D72B85A42A871BFE00BC7591 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		D72B85A72A871D0C00BC7591 /* ListContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentMode.swift; sourceTree = "<group>"; };
+		D72B85AF2A878F3900BC7591 /* EntryKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryKitManager.swift; sourceTree = "<group>"; };
+		D72B85B12A87901400BC7591 /* UIAplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication+Extensions.swift"; sourceTree = "<group>"; };
 		D7FCD82F2526853E424937B8 /* Pods_ProductList_ProductListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList_ProductListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBCDD3A4608B2760DE6CCDD /* Pods_ProductList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E616FB7C5EE2D8405A3C6F60 /* Pods-ProductListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductListTests.release.xcconfig"; path = "Target Support Files/Pods-ProductListTests/Pods-ProductListTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 		D726DC062A8511BB00CADA5B /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				D72B85B32A87965F00BC7591 /* Constants */,
+				D72B85AE2A878F2E00BC7591 /* Managers */,
 				D72B85A62A871CFE00BC7591 /* Enums */,
 				D726DC8E2A864FD400CADA5B /* Extensions */,
 				D726DC592A8525CD00CADA5B /* Network */,
@@ -393,6 +399,7 @@
 				D726DC8F2A864FE500CADA5B /* UIView+Extensions.swift */,
 				D726DC912A866B9B00CADA5B /* UICollectionView+Excensions.swift */,
 				D72B85A42A871BFE00BC7591 /* UIImage+Extensions.swift */,
+				D72B85B12A87901400BC7591 /* UIAplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +427,21 @@
 				D72B85A72A871D0C00BC7591 /* ListContentMode.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		D72B85AE2A878F2E00BC7591 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D72B85AF2A878F3900BC7591 /* EntryKitManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D72B85B32A87965F00BC7591 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,11 +691,13 @@
 				D726DC5C2A85499C00CADA5B /* ProductListModel.swift in Sources */,
 				D726DC472A8518CF00CADA5B /* Closures.swift in Sources */,
 				D726DC922A866B9B00CADA5B /* UICollectionView+Excensions.swift in Sources */,
+				D72B85B22A87901400BC7591 /* UIAplication+Extensions.swift in Sources */,
 				D726DC3F2A85173C00CADA5B /* ProductListViewModel.swift in Sources */,
 				D72B85A52A871BFE00BC7591 /* UIImage+Extensions.swift in Sources */,
 				D726DC6E2A85799B00CADA5B /* InstallmentModel.swift in Sources */,
 				D726DC512A851C7D00CADA5B /* ActivityIndicatorView.swift in Sources */,
 				D726DC8B2A862C4E00CADA5B /* ProductListCellView.swift in Sources */,
+				D72B85B02A878F3900BC7591 /* EntryKitManager.swift in Sources */,
 				D726DC6A2A855B8200CADA5B /* SellerModel.swift in Sources */,
 				D726DC702A857A0A00CADA5B /* ImagesModel.swift in Sources */,
 				D726DC642A85558600CADA5B /* SizeListModel.swift in Sources */,
