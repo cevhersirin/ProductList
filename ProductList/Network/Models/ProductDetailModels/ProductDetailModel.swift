@@ -7,44 +7,44 @@
 
 struct ProductDetail: Decodable {
     
-    var productId                 : Int?
-    var externalSystemCode        : String?
-    var displayName               : String?
-    var description               : Description?
-    var estimatedSupplyDate       : String?
-    var brandName                 : String?
-    var actualPriceText           : String?
-    var actualPrice               : Int?
-    var isStrikeThroughPriceExist : Bool?
-    var strikeThroughPriceText    : String?
-    var strikeThroughPrice        : Int?
-    var discountRateText          : String?
-    var isVatIncluded             : Bool?
-    var vatRate                   : Int?
-    var hasHopiParacik            : Bool?
-    var hopiParacikText           : String?
-    var isPreOrder                : Bool?
-    var hasQuantitySelector       : Bool?
-    var isCosmeticProduct         : Bool?
-    var isBanned                  : Bool?
-    var isGiftCard                : Bool?
-    var isAppWidgetNotShown       : Bool?
-    var images                    : [Images]?
-    var otherColorList            : [OtherColorList]?
-    var tagAttributes             : String?
-    var installment               : Installment?
-    var contentUrl                : ContentUrl?
-    var categoryLink              : UrlModel?
-    var brandLink                 : UrlModel?
-    var bhareUrl                  : String?
-    var sizeSystem                : String?
-    var gtmModel                  : GtmModel?
-    var categoryId                : Int?
-    var categoryName              : String?
-    var breadcrumbCategory        : String?
-    var list                      : String?
-    var seller                    : Seller?
-    var maxProductQuantityCanSold : String?
+    var productId: Int?
+    var externalSystemCode: String?
+    var displayName: String?
+    var description: Description?
+    var estimatedSupplyDate: String?
+    var brandName: String?
+    var actualPriceText: String?
+    var actualPrice: Double?
+    var isStrikeThroughPriceExist: Bool?
+    var strikeThroughPriceText: String?
+    var strikeThroughPrice: Double?
+    var discountRateText: String?
+    var isVatIncluded: Bool?
+    var vatRate: Int?
+    var hasHopiParacik: Bool?
+    var hopiParacikText: String?
+    var isPreOrder: Bool?
+    var hasQuantitySelector: Bool?
+    var isCosmeticProduct: Bool?
+    var isBanned: Bool?
+    var isGiftCard: Bool?
+    var isAppWidgetNotShown: Bool?
+    var images: [Images]?
+    var otherColorList: [OtherColorList]?
+    var tagAttributes: String?
+    var installment: Installment?
+    var contentUrl: ContentUrl?
+    var categoryLink: UrlModel?
+    var brandLink: UrlModel?
+    var bhareUrl: String?
+    var sizeSystem: String?
+    var gtmModel: GtmModel?
+    var categoryId: Int?
+    var categoryName: String?
+    var breadcrumbCategory: String?
+    var list: String?
+    var seller: Seller?
+    var maxProductQuantityCanSold: String?
     
     enum CodingKeys: String, CodingKey {
         case productId = "ProductId"
@@ -97,10 +97,10 @@ struct ProductDetail: Decodable {
         self.estimatedSupplyDate = try container.decodeIfPresent(String.self, forKey: ProductDetail.CodingKeys.estimatedSupplyDate)
         self.brandName = try container.decodeIfPresent(String.self, forKey: ProductDetail.CodingKeys.brandName)
         self.actualPriceText = try container.decodeIfPresent(String.self, forKey: ProductDetail.CodingKeys.actualPriceText)
-        self.actualPrice = try container.decodeIfPresent(Int.self, forKey: ProductDetail.CodingKeys.actualPrice)
+        self.actualPrice = try container.decodeIfPresent(Double.self, forKey: ProductDetail.CodingKeys.actualPrice)
         self.isStrikeThroughPriceExist = try container.decodeIfPresent(Bool.self, forKey: ProductDetail.CodingKeys.isStrikeThroughPriceExist)
         self.strikeThroughPriceText = try container.decodeIfPresent(String.self, forKey: ProductDetail.CodingKeys.strikeThroughPriceText)
-        self.strikeThroughPrice = try container.decodeIfPresent(Int.self, forKey: ProductDetail.CodingKeys.strikeThroughPrice)
+        self.strikeThroughPrice = try container.decodeIfPresent(Double.self, forKey: ProductDetail.CodingKeys.strikeThroughPrice)
         self.discountRateText = try container.decodeIfPresent(String.self, forKey: ProductDetail.CodingKeys.discountRateText)
         self.isVatIncluded = try container.decodeIfPresent(Bool.self, forKey: ProductDetail.CodingKeys.isVatIncluded)
         self.vatRate = try container.decodeIfPresent(Int.self, forKey: ProductDetail.CodingKeys.vatRate)

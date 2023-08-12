@@ -20,7 +20,7 @@ struct Product: Decodable {
     var discountRate: Int?
     var price: Double?
     var cdnResizedImageUrl: String?
-    var secondPrice: Int?
+    var secondPrice: Double?
     var secondPriceText: String?
     var showDefaultDiscountRate: Bool?
     var newDiscountRateText: String?
@@ -91,7 +91,7 @@ struct Product: Decodable {
         self.discountRate = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.discountRate)
         self.price = try container.decodeIfPresent(Double.self, forKey: Product.CodingKeys.price)
         self.cdnResizedImageUrl = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.cdnResizedImageUrl)
-        self.secondPrice = try container.decodeIfPresent(Int.self, forKey: Product.CodingKeys.secondPrice)
+        self.secondPrice = try container.decodeIfPresent(Double.self, forKey: Product.CodingKeys.secondPrice)
         self.secondPriceText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.secondPriceText)
         self.showDefaultDiscountRate = try container.decodeIfPresent(Bool.self, forKey: Product.CodingKeys.showDefaultDiscountRate)
         self.newDiscountRateText = try container.decodeIfPresent(String.self, forKey: Product.CodingKeys.newDiscountRateText)

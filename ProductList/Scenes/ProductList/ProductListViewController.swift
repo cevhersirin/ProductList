@@ -140,10 +140,7 @@ extension ProductListViewController {
 //MARK: CollectionView DataSource
 extension ProductListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let products = viewModel.products?.productList {
-            return products.count
-        }
-        return 0
+        return viewModel.getProductCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -153,6 +150,15 @@ extension ProductListViewController: UICollectionViewDataSource {
         let cellModel = ProductListCellViewModel(productId: product.productId, imageUrl: product.imageUrl, productDisplayName: product.displayName, isFavoritedItem: isFavoritedItem)
         cell.setCell(viewModel: cellModel)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let listCount = viewModel.getProductCount()
+        let currentPage = viewModel.currentPage
+        let totalPageCount = viewModel.totalPageCount
+        if indexPath.row == listCount - 1, listCount > 0, currentPage < totalPageCount {
+            viewModel.getProductList()
+        }
     }
 }
 

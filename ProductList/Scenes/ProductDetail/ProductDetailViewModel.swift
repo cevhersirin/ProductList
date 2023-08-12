@@ -31,8 +31,8 @@ class ProductDetailViewModel: BaseViewModel {
             guard let self else { return }
             self.hideLoading?()
             self.productDetail = response.value?.result
-            getDataSuccess?()
             print(response)
+            getDataSuccess?()
         }
     }
     
@@ -77,4 +77,5 @@ class ProductDetailViewModel: BaseViewModel {
         guard let favoritedItemIds else { return false }
         return favoritedItemIds.contains(id)
     }
+    
 }

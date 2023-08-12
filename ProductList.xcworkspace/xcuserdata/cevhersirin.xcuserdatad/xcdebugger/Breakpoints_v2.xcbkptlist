@@ -7,17 +7,161 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E54A97A7-1E76-48D6-B3C3-08A6B69F6095"
+            uuid = "1F3AF7F2-B700-4702-AA24-E7EAB06580A2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductList/Scenes/ProductList/ProductListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getProductCount()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26C853AE-D3F1-400D-B5ED-F39C2489DCC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductList/Scenes/ProductList/ProductListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "collectionView(_:willDisplay:forItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6852BE7-1CA5-4489-BE5B-EECD2B97145C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductList/Scenes/ProductList/ProductListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getProductList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4630A0FF-EC3A-4F5C-8125-4EE65D10B4FD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductList/Scenes/ProductList/ProductListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4630A0FF-EC3A-4F5C-8125-4EE65D10B4FD - 8a2f157a8a2226a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductList.ProductListViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "ProductList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cevhersirin/Desktop/Personal/ProductList/ProductList/Scenes/ProductList/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "4630A0FF-EC3A-4F5C-8125-4EE65D10B4FD - 8a2f157a8a2226a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductList.ProductListViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "ProductList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cevhersirin/Desktop/Personal/ProductList/ProductList/Scenes/ProductList/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "501DB449-3980-4F6E-9948-B6035D986746"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductList/Scenes/ProductDetail/ProductDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getProductDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62AD1214-F36B-4555-9C03-DB4500DE8D8B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductList/Scenes/ProductDetail/ProductDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getProductDetail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62AD1214-F36B-4555-9C03-DB4500DE8D8B - 1794463facf0d669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;ProductList.BaseResponse&lt;ProductList.ProductDetail&gt;, Alamofire.AFError&gt;) -&gt; () in ProductList.ProductDetailViewModel.getProductDetail() -&gt; ()"
+                  moduleName = "ProductList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cevhersirin/Desktop/Personal/ProductList/ProductList/Scenes/ProductDetail/ProductDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "62AD1214-F36B-4555-9C03-DB4500DE8D8B - 1794463facf0d669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;ProductList.BaseResponse&lt;ProductList.ProductDetail&gt;, Alamofire.AFError&gt;) -&gt; () in ProductList.ProductDetailViewModel.getProductDetail() -&gt; ()"
+                  moduleName = "ProductList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cevhersirin/Desktop/Personal/ProductList/ProductList/Scenes/ProductDetail/ProductDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
